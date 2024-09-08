@@ -1,0 +1,48 @@
+<div class="flex items-center justify-center gap-5 h-screen">
+  <div class="flex flex-col gap-5">
+    <select
+      class="border-2 border-black"
+      [(ngModel)]="currency1"
+      (ngModelChange)="onCurrencyChange()"
+    >
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+    <input
+      class="border-2 border-black p-3"
+      type="number"
+      [(ngModel)]="amount1"
+      (ngModelChange)="onAmount1Change()"
+      placeholder="Enter amount"
+    />
+  </div>
+
+  <div class="flex flex-col gap-5">
+    <select
+      class="border-2 border-black"
+      [(ngModel)]="currency2"
+      (ngModelChange)="onCurrencyChange()"
+    >
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+    <input
+      class="border-2 border-black p-3"
+      type="number"
+      [(ngModel)]="amount2"
+      (ngModelChange)="onAmount2Change()"
+      placeholder="Enter amount"
+    />
+  </div>
+
+  <div class="flex justify-center mt-5">
+    <button
+      class="bg-red-500 text-white p-3 rounded"
+      (click)="resetToInitialValues()"
+    >
+      reset
+    </button>
+  </div>
+</div>
