@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "baseHref": "/converter-test-task/",
+            "baseHref": "/",
             "outputPath": "dist/converter-test-task",
             "index": "src/index.html",
             "browser": "src/main.ts",
