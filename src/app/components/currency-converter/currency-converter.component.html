@@ -1,48 +1,64 @@
-<div class="flex items-center justify-center gap-5 h-screen">
-  <div class="flex flex-col gap-5">
-    <select
-      class="border-2 border-black"
-      [(ngModel)]="currency1"
-      (ngModelChange)="onCurrencyChange()"
-    >
-      <option *ngFor="let currency of currencies" [value]="currency">
-        {{ currency }}
-      </option>
-    </select>
-    <input
-      class="border-2 border-black p-3"
-      type="number"
-      [(ngModel)]="amount1"
-      (ngModelChange)="onAmount1Change()"
-      placeholder="Enter amount"
-    />
-  </div>
+<div class="flex justify-center items-center mt-28">
+  <div
+    class="flex flex-col items-center justify-center gap-5 p-[50px] rounded shadow-2xl bg-[#3F51B5]"
+  >
+    <h1 class="text-white text-2xl uppercase">try to convert</h1>
+    <div class="flex flex-row gap-5">
+      <div class="flex flex-col gap-5">
+        <mat-form-field appearance="fill">
+          <mat-label>Currency 1</mat-label>
+          <mat-select
+            [(ngModel)]="currency1"
+            (selectionChange)="onCurrencyChange()"
+          >
+            <mat-option *ngFor="let currency of currencies" [value]="currency">
+              {{ currency }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-  <div class="flex flex-col gap-5">
-    <select
-      class="border-2 border-black"
-      [(ngModel)]="currency2"
-      (ngModelChange)="onCurrencyChange()"
-    >
-      <option *ngFor="let currency of currencies" [value]="currency">
-        {{ currency }}
-      </option>
-    </select>
-    <input
-      class="border-2 border-black p-3"
-      type="number"
-      [(ngModel)]="amount2"
-      (ngModelChange)="onAmount2Change()"
-      placeholder="Enter amount"
-    />
-  </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter amount</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="amount1"
+            (ngModelChange)="onAmount1Change()"
+          />
+        </mat-form-field>
+      </div>
 
-  <div class="flex justify-center mt-5">
-    <button
-      class="bg-red-500 text-white p-3 rounded"
-      (click)="resetToInitialValues()"
-    >
-      reset
-    </button>
+      <div class="flex flex-col gap-5">
+        <mat-form-field appearance="fill">
+          <mat-label>Currency 2</mat-label>
+          <mat-select
+            [(ngModel)]="currency2"
+            (selectionChange)="onCurrencyChange()"
+          >
+            <mat-option *ngFor="let currency of currencies" [value]="currency">
+              {{ currency }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Enter amount</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="amount2"
+            (ngModelChange)="onAmount2Change()"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="flex justify-center mt-5">
+      <button
+        class="w-[200px] h-[50px] bg-white text-black text-xl font-semibold rounded hover:bg-black hover:text-white transition duration-300 ease-in-out"
+        (click)="resetToInitialValues()"
+      >
+        Reset
+      </button>
+    </div>
   </div>
 </div>

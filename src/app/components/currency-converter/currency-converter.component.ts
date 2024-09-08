@@ -2,16 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { CurrencyService } from '../../services/currency.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-currency-converter',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   templateUrl: './currency-converter.component.html',
-  styleUrls: ['./currency-converter.component.scss']
+  styleUrls: ['./currency-converter.component.scss'],
 })
 export class CurrencyConverterComponent implements OnInit {
-  currencies: string[] = ['UAH', 'USD', 'EUR', 'GBP'];
+  currencies: string[] = ['UAH', 'USD', 'EUR', 'ILS', 'PLN', 'MAD', 'RON', 'IDR', 'HUF', 'GBP'];
 
   initialCurrency1: string = 'UAH';
   initialCurrency2: string = 'USD';
@@ -33,7 +42,7 @@ export class CurrencyConverterComponent implements OnInit {
   }
 
   loadExchangeRates() {
-    this.currencyService.getRates().subscribe(data => {
+    this.currencyService.getRates().subscribe((data) => {
       this.processExchangeRates(data);
       this.convertCurrency();
     });
@@ -61,17 +70,25 @@ export class CurrencyConverterComponent implements OnInit {
   }
 
   convertAmount1() {
-    const rate1toUAH = this.currency1 === 'UAH' ? 1 : this.exchangeRates[this.currency1];
-    const rate2toUAH = this.currency2 === 'UAH' ? 1 : this.exchangeRates[this.currency2];
+    const rate1toUAH =
+      this.currency1 === 'UAH' ? 1 : this.exchangeRates[this.currency1];
+    const rate2toUAH =
+      this.currency2 === 'UAH' ? 1 : this.exchangeRates[this.currency2];
 
-    this.amount2 = parseFloat((this.amount1! * (rate1toUAH / rate2toUAH)).toFixed(2));
+    this.amount2 = parseFloat(
+      (this.amount1! * (rate1toUAH / rate2toUAH)).toFixed(2)
+    );
   }
 
   convertAmount2() {
-    const rate2toUAH = this.currency2 === 'UAH' ? 1 : this.exchangeRates[this.currency2];
-    const rate1toUAH = this.currency1 === 'UAH' ? 1 : this.exchangeRates[this.currency1];
+    const rate2toUAH =
+      this.currency2 === 'UAH' ? 1 : this.exchangeRates[this.currency2];
+    const rate1toUAH =
+      this.currency1 === 'UAH' ? 1 : this.exchangeRates[this.currency1];
 
-    this.amount1 = parseFloat((this.amount2! * (rate2toUAH / rate1toUAH)).toFixed(2));
+    this.amount1 = parseFloat(
+      (this.amount2! * (rate2toUAH / rate1toUAH)).toFixed(2)
+    );
   }
 
   onAmount1Change() {

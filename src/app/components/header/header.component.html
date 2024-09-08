@@ -1,11 +1,13 @@
-<header class="p-4 bg-gray-800 text-white flex items-center justify-between">
-  <h1 class="text-xl font-bold">Currency Converter</h1>
-
-  <div class="flex gap-4">
+<mat-toolbar color="primary" class="p-4">
+  <span class="text-xl font-bold">Currency Converter</span>
+  <span class="flex gap-4 ml-auto text-black">
     <ng-container>
-      <p *ngIf="usdToUah">USD to UAH: {{ usdToUah | number: '1.2-2' }}</p>
-      <p *ngIf="eurToUah">EUR to UAH: {{ eurToUah | number: '1.2-2' }}</p>
+      <mat-card *ngIf="usdToUah" class="p-2">
+        <p>USD to UAH: {{ usdToUah | number : "1.2-2" }}₴</p>
+      </mat-card>
+      <mat-card *ngIf="eurToUah" class="p-2">
+        <p>EUR to UAH: {{ eurToUah | number : "1.2-2" }}₴</p>
+      </mat-card>
     </ng-container>
-
-  </div>
-</header>
+  </span>
+</mat-toolbar>
