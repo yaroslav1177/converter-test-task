@@ -17,9 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/converter-test-task/",
             "outputPath": "dist/converter-test-task",
             "index": "src/index.html",
-            "404": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
