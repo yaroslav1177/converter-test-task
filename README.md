@@ -1,27 +1,38 @@
-# ConverterTestTask
+# Currency Converter project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+This project is a currency converter application built with Angular and TypeScript. It fetches real-time exchange rates for USD and EUR to UAH from the National Bank of Ukraine's public API and displays them in a header component. The main feature includes a dynamic currency converter allowing users to convert between these currencies, with a reset button to restore default values. The design leverages Tailwind CSS for styling and Angular Material for UI components.
 
-## Development server
+## Technologies Used:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+  - Angular
+  - TypeScript
+  - Tailwind
+  - Angular Material
 
-## Code scaffolding
+## Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[Check out the live demo](https://yaroslav1177.github.io/converter-test-task/)
 
-## Build
+## Installation (node 18+)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run this project locally:
 
-## Running unit tests
+1. Clone the repository
+   ```bash
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    git clone https://github.com/yaroslav1177/converter-test-task.git
 
-## Running end-to-end tests
+2. Navigate to the project directory
+   ```bash
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    cd converter-test-task
 
-## Further help
+3. Install dependencies
+   ```bash
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    npm install
+
+4. Start the application
+   ```bash
+   
+    ng serve
