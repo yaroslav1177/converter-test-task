@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng deploy --base-href=/converter-test-task/ --repo=https://github.com/yaroslav1177/converter-test-task.git",
+    "deploy": "ng deploy --repo=https://github.com/yaroslav1177/converter-test-task.git",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:converter-test-task": "node dist/converter-test-task/server/server.mjs"
